@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function tinhDiemTrungBinh() {
+        let diemToan = parseFloat(prompt("Nhập điểm Toán:"));
+        let diemLy = parseFloat(prompt("Nhập điểm Lý:"));
+        let diemHoa = parseFloat(prompt("Nhập điểm Hóa:"));
+        let diemSinh = parseFloat(prompt("Nhập điểm Sinh:"));
+
+       // Kiểm tra điều kiện đầu vào
+  if (diemToan < 0 || diemToan > 10 ||
+      diemLy < 0 || diemLy > 10 ||
+      diemHoa < 0 || diemHoa > 10 ||
+      diemSinh < 0 || diemSinh > 10) {
+    alert("Điểm nhập vào không hợp lệ");
+    return;
+  }
+
+  // Tính điểm trung bình cộng 4 môn
+  let diemTrungBinh = (diemToan + diemLy + diemHoa + diemSinh) / 4;
+
+  // Xuất ra kết quả xếp loại của sv
+  if (diemTrungBinh >= 9 && diemTrungBinh <= 10) {
+    alert("Xếp loại: Giỏi");
+  } else if (diemTrungBinh >= 7 && diemTrungBinh < 9) {
+    alert("Xếp loại: Khá");
+  } else if (diemTrungBinh >= 5 && diemTrungBinh < 7) {
+    alert("Xếp loại: Trung Bình");
+  } else {
+    alert("Xếp loại: Yếu");
+  }
+}
+
+function menu() {
+  while (true) {
+    let luaChon = parseInt(prompt("Menu:\n1. Tính điểm trung bình (if-else)\n2. Tính điểm trung bình (switch case)\n0. Thoát"));
+    switch (luaChon) {
+      case 1:
+        tinhDiemTrungBinh();
+        break;
+      case 2:
+        alert("");
+        break;
+      case 0:
+        return;
+      default:
+        alert("Lựa chọn không hợp lệ!");
+        break;
+    }
+  }
+}
+
+menu();
+
+    </script>
+</body>
+</html>
